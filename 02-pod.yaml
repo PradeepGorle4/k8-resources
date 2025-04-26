@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: nginx
-  Namespace: expense
+  namespace: expense
 spec:
   # One POD can contain multiple containers
   containers:
