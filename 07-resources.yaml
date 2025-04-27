@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    resources:
+      requests:
+       memory: "70mi" # mi is mebibytes 1Mi = 1.048 Mb
+       cpu: "100m" # m is millicore. so 100m is 0.1 core or 10% of 1 core
+      limits:
+        memory: "100mi"
+        cpu: "100m"
