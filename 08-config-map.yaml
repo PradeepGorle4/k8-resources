@@ -5,3 +5,5 @@ metadata:
 data:
   course: "Kuberenetes"
   duration: "20Hrs"
+
+  # You need to pass this config map as reference to other pod which uses these config data. 09-config-pod is using this currently.
