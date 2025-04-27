@@ -9,9 +9,9 @@ spec:
     resources:
     # Soft Limit
       requests:
-        memory: "70mi" # mi is mebibytes 1Mi = 1.048 Mb
+        memory: "70Mi" # Mi is mebibytes 1Mi = 1.048 Mb - these units are case sensitive
         cpu: "100m" # m is millicore. so 100m is 0.1 core or 10% of 1 core
     # Hard Limit
       limits:
-        memory: "100mi"
+        memory: "100Mi"
         cpu: "100m"
