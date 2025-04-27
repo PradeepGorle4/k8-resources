@@ -11,7 +11,7 @@ spec:
   ports:
   - protocol: TCP
     port: 80 # Service port
-    target port: 80 # This is target container port. so traffic comes from port 80 of service to port 80 of pod.
+    targetport: 80 # This is target container port. so traffic comes from port 80 of service to port 80 of pod.
 --- 
 apiVersion: v1 
 kind: Pod
