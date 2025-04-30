@@ -1,15 +1,15 @@
 apiVersion: v1 
 kind: Service
 metadata:
-  name: nginx-np
+  name: nginx-lb
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector: # Labels are used as selectors here, this service will be attached to the pod whose labels matches the selectors
     project: expense
     environment: dev
     component: backend
     version: 1.0.0
-    demo: np
+    demo: lb
   ports:
   - protocol: TCP
     port: 80 # Service port
@@ -19,7 +19,7 @@ spec:
 apiVersion: v1 
 kind: Pod
 metadata:
-  name: backend-np
+  name: backend-lb
   labels:
     project: expense
     environment: dev
