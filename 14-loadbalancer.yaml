@@ -25,7 +25,7 @@ metadata:
     environment: dev
     component: backend
     version: 1.0.0
-    demo: np
+    demo: lb
 spec:
   containers:
   - name: nginx
