@@ -13,12 +13,12 @@ spec:
     app: frontend
     tier: web
 # Pod is a subset of ReplicaSet. The below is the Pod definition. or the template for pod creation
-template:
-  metadata:
-    labels:
-      app: frontend
-      tier: web
-  spec:
-    containers:
-      name: nginx
-      image: nginx
+  template:
+    metadata:
+      labels:
+        app: frontend
+        tier: web
+    spec:
+      containers:
+        name: nginx
+        image: nginx
