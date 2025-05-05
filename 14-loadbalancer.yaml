@@ -14,7 +14,7 @@ spec:
   - protocol: TCP
     port: 80 # Service port
     targetPort: 80 # - target container port. So traffic comes from port 80 of service to port 80 of pod. P capital in targetPort
-    nodePort: 30007 # This opens the fixed port 30007 on the node (server), you can make the changes in security group
+    nodePort: 30007 # This opens the fixed port 30007 on the node (server)
 --- 
 apiVersion: v1 
 kind: Pod
