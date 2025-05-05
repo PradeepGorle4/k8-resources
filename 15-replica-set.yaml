@@ -10,8 +10,9 @@ spec:
   replicas: 3
   selector:
   # Replica set use these labels to find which pod they belongs to and manage them. Also create a pod using template if already not present
-    app: frontend
-    tier: web
+    matchLabels:
+      app: frontend
+      tier: web
 # Pod is a subset of ReplicaSet. The below is the Pod definition. or the template for pod creation
   template:
     metadata:
