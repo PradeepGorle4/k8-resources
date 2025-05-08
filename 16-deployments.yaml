@@ -44,4 +44,10 @@ spec:
     nodePort: 30007 # This opens the fixed port 30007 on the node (server), you can make the changes in security group
 
 
-
+# Explanation of Core Sections:
+# - apiVersion: Specifies the Kubernetes API version.
+# - kind: Defines the resource type (Deployment).
+# - metadata: Provides identifying details like name, namespace, and labels.
+# - spec: Defines deployment details like replicas and selectors.
+# - template: Describes the structure of pods to be created.
+# - containers: Lists containers, specifying the image and ports.

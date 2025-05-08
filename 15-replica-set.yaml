@@ -23,3 +23,11 @@ spec:
       containers:
       - name: nginx
         image: nginx:stable-perl
+
+    # Explanation of Core Sections:
+# - apiVersion: Specifies the Kubernetes API version.
+# - kind: Defines the resource type (Deployment).
+# - metadata: Provides identifying details like name, namespace, and labels.
+# - spec: Defines deployment details like replicas and selectors.
+# - template: Describes the structure of pods to be created.
+# - containers: Lists containers, specifying the image and ports.
