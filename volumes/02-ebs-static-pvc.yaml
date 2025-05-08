@@ -18,6 +18,8 @@ kind: Pod
 metadata:
   name: ebs-static
 spec:
+  labels:
+    purpose: ebs-static-demo
   nodeSelector:
     topology.kubernetes.io/zone: us-east-1a
   containers:
@@ -30,3 +32,18 @@ spec:
   - name: persistent-storage # Volume mount name and volume name should be same.
     persistentVolumeClaim:
       claimName: ebs-static
+
+---
+apiVersion: v1 
+kind: Service
+metadata:
+  name: nginx-lb
+spec:
+  type: LoadBalancer
+  selector: # Labels are used as selectors here, this service will be attached to the pod whose labels matches the selectors
+    purpose: ebs-static-demo
+  ports:
+  - protocol: TCP
+    port: 80 # Service port
+    targetPort: 80 # - target container port. So traffic comes from port 80 of service to port 80 of pod. P capital in targetPort
+    nodePort: 30007
