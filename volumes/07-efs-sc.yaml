@@ -1,0 +1,15 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: efs-expense
+provisioner: efs.csi.aws.com
+parameters:
+  provisioningMode: efs-ap # ap- access points
+  fileSystemId: fs-00f5d7a5f2beb9758
+  directoryPerms: "700"
+  basePath: "/expense" # Defines the subdirectory path inside EFS
+
+  # Unlike some other storage types (e.g., AWS EBS), EFS does not require a spec section in the StorageClass.
+  # EFS volumes are network-mounted instead of node-mounted, so Kubernetes does not provision them like block storage.
+  # The StorageClass just links Kubernetes to an existing EFS file system
+
