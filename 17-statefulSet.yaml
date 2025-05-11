@@ -20,7 +20,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      name: nginx
+      app: nginx
       demo: statefulset # has to match spec.template.metadata.labels
   serviceName: "nginx-headless" # name of the headless service
   replicas: 3 # default is 1
