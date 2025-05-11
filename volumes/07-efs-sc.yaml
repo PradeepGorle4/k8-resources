@@ -3,6 +3,7 @@ kind: StorageClass
 metadata:
   name: efs-expense
 provisioner: efs.csi.aws.com
+# reclaimPolicy: Retain # for EFS default is retain unlike ebs. so no need to mention this explicitly
 parameters:
   provisioningMode: efs-ap # ap- access points
   fileSystemId: fs-00f5d7a5f2beb9758
@@ -12,4 +13,6 @@ parameters:
   # Unlike some other storage types (e.g., AWS EBS), EFS does not require a spec section in the StorageClass.
   # EFS volumes are network-mounted instead of node-mounted, so Kubernetes does not provision them like block storage.
   # The StorageClass just links Kubernetes to an existing EFS file system
+
+  # 
 
