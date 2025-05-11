@@ -3,7 +3,7 @@ kind: StorageClass
 metadata:
   name: efs-expense
 provisioner: efs.csi.aws.com
-# reclaimPolicy: Retain # for EFS default is retain unlike ebs. so no need to mention this explicitly
+# reclaimPolicy: Retain # deletes the Access Points by default
 parameters:
   provisioningMode: efs-ap # ap- access points
   fileSystemId: fs-00f5d7a5f2beb9758

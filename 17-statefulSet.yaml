@@ -1,0 +1,14 @@
+apiVersion: v1 
+kind: service
+metadata: 
+  name: nginx
+  labels:
+    app: nginx
+    demo: statefulset
+spec:
+  ports:
+  - port: 80
+    name: web
+  clusterIP: none # should be none for headless service
+  selector:
+    app: nginx
