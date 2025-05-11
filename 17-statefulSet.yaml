@@ -9,7 +9,7 @@ spec:
   ports:
   - port: 80
     name: web
-  clusterIP: none # should be none for headless service
+  clusterIP: None # should be none for headless service
   selector:
     app: nginx
 ---
@@ -30,17 +30,17 @@ spec:
       labels:
         app: nginx
         demo: statefulset # has to match spec.selector.matchLabels.
-      spec:
-        terminationGracePeriodSeconds: 10
-        containers:
-        - name: nginx
-          image: nginx
-          ports:
-          - containerPort: 80
-            name: web
-          volumeMounts:
-          - name: www
-            mountPath: /usr/share/nginx/html
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+          name: web
+        volumeMounts:
+        - name: www
+          mountPath: /usr/share/nginx/html
     # Instead of creating a  PVC resource, you can you can directly provide the PVC here in statefulset template itself like below.
   volumeClaimTemplates:
   - metadata:
