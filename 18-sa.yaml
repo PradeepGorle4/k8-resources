@@ -19,6 +19,6 @@ spec:
     volumeMounts:
     - mountPath: /secrets
       name: secret-volume
-    volumes:
-    - name: secret-volume
-      emptyDir: {} # you can mention the size if you require
+  volumes:
+  - name: secret-volume
+    emptyDir: {} # you can mention the size if you require
